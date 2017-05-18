@@ -5,7 +5,10 @@ app.get('/*',function(req,res){
    var p0 = req.params[0];
    if ( p0 != null){
        try{
-        var date = new Date(p0)   
+           if ( !parseInt(p0) )
+            var date = new Date(p0);
+            else 
+        var date = new Date(p0 * 1000);  
        }catch(err)
        {
            res.send({unix: null, natural: null});
