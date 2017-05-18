@@ -25,4 +25,5 @@ app.get('/*',function(req,res){
    
 });
 
-app.listen(80);
+var port = process.env.PORT || 80;
+app.listen(port);
